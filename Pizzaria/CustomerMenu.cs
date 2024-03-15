@@ -17,9 +17,9 @@ namespace Pizzaria {
             EnterOption("3: join members club");
             EnterOption("4 return to main menu");
         }
-        public void RunCustomerMenu()
+        public override void RunMenu()
         {
-            CreateMenuOptions();
+
             base.RunMenu();
 
             switch (_numberentered)
@@ -39,16 +39,16 @@ namespace Pizzaria {
                     break;
 
                 case "4":
-                    Console.WriteLine("You pressed 4 and will be returned to main menu");
+                    YouPressedMessage();
                     CustomerOrEmployee customerOrEmployee = new CustomerOrEmployee();
                     Console.Clear();
-                    customerOrEmployee.RunStartMenu();
-
+                    customerOrEmployee.RunMenu();
                     break;
 
                 default:
-                    Console.WriteLine("Please enter one of the following numbers:");
-                    RunCustomerMenu();
+                    Console.WriteLine("Please enter one of the following numbers: 1, 2, 3 or 4");
+                    Thread.Sleep(1500);
+                    RunMenu();
                     break;
             }
         }

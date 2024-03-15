@@ -15,10 +15,9 @@ namespace Pizzaria {
             EnterOption("4: return to main menu");
             
         }
-        public void RunEmployeeMenu()
+        public override void RunMenu()
         {
-
-            CreateMenuOptions();
+            
             base.RunMenu();
 
             switch (_numberentered)
@@ -38,15 +37,15 @@ namespace Pizzaria {
                     break;
 
                 case "4":
-                    Console.WriteLine("You pressed 4 and will be returned to main menu");
-                    CustomerOrEmployee customerOrEmployee = new CustomerOrEmployee();
+                    YouPressedMessage();
+                    MenuCatalog customerOrEmployee = new CustomerOrEmployee();
                     Console.Clear();
-                    customerOrEmployee.RunStartMenu();
+                    customerOrEmployee.RunMenu();
                     break;
 
                 default:
                     Console.WriteLine("Please enter one of the following numbers:");
-                    RunEmployeeMenu();
+                    RunMenu();
                     break;
             }
         }

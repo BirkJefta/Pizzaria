@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Pizzaria {
-    internal class FoodMenu {
+    public class FoodMenu {
         
     }
 }

@@ -9,47 +9,57 @@ namespace Pizzaria {
     public class MenuCatalog {
 
         
-        protected string _numberentered;
+        protected string _numberentered; //evt lav som get/set for at lave private.
         List<string> messages = new List<string>();
         
-
-
-
-        protected void EnterOption(string message)
-        {
-            messages.Add(message);
-        }
 
         public void DisplayOptions()
         {
             foreach (var message in messages)
             {
                 Console.WriteLine(message);
-                Console.WriteLine("");
+                BlankSpace();
             }
-            Console.WriteLine("");
-        }
-        public void ClearList () 
-        { 
-            messages.Clear(); 
+            BlankSpace();
         }
 
-        protected virtual void CreateMenuOptions(){}
+        protected virtual void CreateMenuOptions(){ }//måske lav abstract i stedet.
 
-        public void RunMenu()
+
+
+        public virtual void RunMenu()
         {
-
-            Console.WriteLine("");
+            
+            Console.Clear();
+            ClearList();
+            CreateMenuOptions();
+            BlankSpace();
             Console.WriteLine("Please enter number and then press enter");
-            Console.WriteLine("");
+            BlankSpace();
             DisplayOptions();
             _numberentered = Console.ReadLine();
         }
+        protected virtual void YouPressedMessage()
+        {
+            Console.Clear();
+            Console.WriteLine($"You pressed {_numberentered} ");
+            Thread.Sleep(1000);
+        }
+
+
         public void BlankSpace() 
         {
             Console.WriteLine("");
         }
+        public void ClearList()
+        {
+            messages.Clear();
+        }
 
+        protected void EnterOption(string message)
+        {
+            messages.Add(message);
+        }
 
     }
 }

@@ -17,27 +17,23 @@ namespace Pizzaria {
             EnterOption("1: Press 1, if you are a customer");
             EnterOption("2: Press 2 if you are an employee");
         }
-        public void RunStartMenu()
+        
+        public override void RunMenu()
         {
-            Console.Clear();
-            CreateMenuOptions();
 
             base.RunMenu();
 
             if (_numberentered == "1")
             {
-                
-                Console.Clear();
-                Console.WriteLine($"Hello, you pressed 1, here is the customer menu");
+                YouPressedMessage();
                 CustomerMenu customerMenu = new CustomerMenu();
-                customerMenu.RunCustomerMenu();
+                customerMenu.RunMenu();
             }
             else if (_numberentered == "2")
             {
-                Console.Clear();
-                Console.WriteLine($"Hello, you pressed 2 here is the employee menu ");
+                YouPressedMessage();
                 EmployeeMenu employeeMenu = new EmployeeMenu();
-                employeeMenu.RunEmployeeMenu();
+                employeeMenu.RunMenu();
             }
             else
             {
@@ -45,9 +41,7 @@ namespace Pizzaria {
                 Console.WriteLine("Please enter either 1 or 2");
                 BlankSpace();
                 Thread.Sleep(1800);
-                ClearList();
-                RunStartMenu();
-                
+                RunMenu();
             }
         }
     }

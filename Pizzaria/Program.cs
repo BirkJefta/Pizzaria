@@ -2,8 +2,9 @@
     internal class Program {
         static void Main(string[] args)
         {
-            Store Mamas = new Store();
-            Mamas.Run();
+            Store BigMamasPizza = new Store();
+            BigMamasPizza.Run();
+            
         }
     }
 }
