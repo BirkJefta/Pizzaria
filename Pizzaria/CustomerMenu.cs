@@ -40,7 +40,7 @@ namespace Pizzaria {
 
                 case "4":
                     YouPressedMessage();
-                    CustomerOrEmployee customerOrEmployee = new CustomerOrEmployee();
+                    MenuCatalog customerOrEmployee = new CustomerOrEmployee();
                     Console.Clear();
                     customerOrEmployee.RunMenu();
                     break;
