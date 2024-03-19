@@ -3,34 +3,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading.Tasks.Dataflow;
 using System.Xml.Linq;
 
 namespace Pizzaria {
-    public class MenuCatalog {
+    public class UIMenu {
 
         
-        protected string _numberentered; //evt lav som get/set for at lave private.
+        protected string _numberentered; //TODO: evt lav som get/set for at lave private.
         List<string> messages = new List<string>();
-        
+        protected bool _proceed = true;
+        protected PizzaController pizzaController;
+
+
+
 
         public void DisplayOptions()
         {
+            
             foreach (var message in messages)
             {
                 Console.WriteLine(message);
                 BlankSpace();
+                
             }
             BlankSpace();
+            
         }
+        
 
-        protected virtual void CreateMenuOptions(){ }//måske lav abstract i stedet.
+        protected virtual void CreateMenuOptions(){ }//TODO: måske lav abstract i stedet.
 
 
 
         public virtual void RunMenu()
         {
-            
-            Console.Clear();
+
+            pizzaController = new PizzaController();
             ClearList();
             CreateMenuOptions();
             BlankSpace();
@@ -38,6 +47,8 @@ namespace Pizzaria {
             BlankSpace();
             DisplayOptions();
             _numberentered = Console.ReadLine();
+
+            
         }
         protected virtual void YouPressedMessage()
         {

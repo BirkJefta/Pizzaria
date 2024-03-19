@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace Pizzaria {
     public class Store {
-        MenuCatalog CustomerOrEmployee = new CustomerOrEmployee();
+        UIMenu CustomerOrEmployee = new CustomerOrEmployee();
         
         public void Run()
         {
+            //InitialMenu initialMenu = new InitialMenu();
+            //initialMenu.RunInitialMenu();
             CustomerOrEmployee.RunMenu();
+
         }
 
     }

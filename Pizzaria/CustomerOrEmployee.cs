@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Pizzaria {
-    public class CustomerOrEmployee : MenuCatalog
+    public class CustomerOrEmployee : UIMenu
         {
 
 
@@ -32,7 +32,7 @@ namespace Pizzaria {
             else if (_numberentered == "2")
             {
                 YouPressedMessage();
-                EmployeeMenu employeeMenu = new EmployeeMenu();
+                EmployeeUI employeeMenu = new EmployeeUI();
                 employeeMenu.RunMenu();
             }
             else
