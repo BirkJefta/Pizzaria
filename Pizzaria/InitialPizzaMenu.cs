@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Pizzaria {
-    public class InitialMenu {
+    public class InitialPizzaMenu {
         List<string> pizzaNames = new List<string>();
         List<string> pizzaToppings = new List<string>();
         List<double> pizzaPrice = new List<double>(); 
@@ -83,7 +83,7 @@ namespace Pizzaria {
 
 
 
-        public InitialMenu() {
+        public InitialPizzaMenu() {
             InitializePizzaNames();
             InitializeToppings();
             InitializePrice();
@@ -118,14 +118,16 @@ namespace Pizzaria {
             }
         }
 
-        //public void RunInitialMenu()
-        //{
-        //    for (int i = 0; i < pizzaNames.Count; i++)
-        //    {
-        //        Pizza pizza = new Pizza(pizzaNames[i], pizzaToppings[i], pizzaPrice[i]);
-        //        PizzaDataLayer.AddToMenu(i+1, pizza);
-        //    }
-        //}
+        public void RunInitialMenu()
+        {
+            for (int i = 0; i < pizzaNames.Count; i++)
+            {
+                PizzaController pizzaController = new PizzaController();
+                ;
+                pizzaController.AddPizza(i+1, pizzaController.CreatePizza(pizzaNames[i], pizzaToppings[i], pizzaPrice[i]));
+                
+            }
+        }
 
         //public void DisplayMenu()
         //{

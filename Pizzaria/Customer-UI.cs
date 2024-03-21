@@ -7,7 +7,12 @@ using System.Xml.Linq;
 
 namespace Pizzaria {
     public class CustomerMenu : UIMenu {
-        
+        private PizzaController _pizzaController;
+
+        public CustomerMenu()
+        {
+            _pizzaController = new PizzaController();
+        }
         
 
         protected override void CreateMenuOptions()
@@ -31,7 +36,7 @@ namespace Pizzaria {
                         Console.Clear();
                         Console.WriteLine("Menu");
                         BlankSpace();
-                        PizzaDataLayer.DisplayPizzaMenu();
+                        _pizzaController.DisplayMenu();
                         break;
 
                     case "2":

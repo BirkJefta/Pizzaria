@@ -25,6 +25,18 @@ namespace Pizzaria {
         {
             return PizzaManager.AddPizza(pizzzaID, pizza);
         }
+        public void DisplayMenu()
+        {
+           PizzaManager.DisplayMenu();
+        }
+        public void RemoveAndUpdateMenu(int pizzaID) 
+        {
+            PizzaManager.RemoveAndUpdate(pizzaID);
+        }
+        public Pizza FindPizza(int pizzzaID)
+        {
+            return PizzaManager.FindPizza(pizzzaID);
+        }
 
 
     }

@@ -12,8 +12,7 @@ namespace Pizzaria {
         
         protected string _numberentered; //TODO: evt lav som get/set for at lave private.
         List<string> messages = new List<string>();
-        protected bool _proceed = true;
-        protected PizzaController pizzaController;
+        protected bool _proceed;
 
 
 
@@ -39,7 +38,7 @@ namespace Pizzaria {
         public virtual void RunMenu()
         {
 
-            pizzaController = new PizzaController();
+            
             ClearList();
             CreateMenuOptions();
             BlankSpace();

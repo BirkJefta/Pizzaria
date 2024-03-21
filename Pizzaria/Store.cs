@@ -10,8 +10,8 @@ namespace Pizzaria {
         
         public void Run()
         {
-            //InitialMenu initialMenu = new InitialMenu();
-            //initialMenu.RunInitialMenu();
+            InitialPizzaMenu initialMenu = new InitialPizzaMenu();
+            initialMenu.RunInitialMenu();
             CustomerOrEmployee.RunMenu();
 
         }
