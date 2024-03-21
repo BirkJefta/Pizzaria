@@ -9,36 +9,37 @@ using System.Xml.Linq;
 namespace Pizzaria {
     public class UIMenu {
 
-        
+
         protected string _numberentered; //TODO: evt lav som get/set for at lave private.
         List<string> messages = new List<string>();
-        protected bool _proceed;
+        protected bool _proceed = true;
+        protected PizzaController pizzaController;
 
 
 
 
         public void DisplayOptions()
         {
-            
+
             foreach (var message in messages)
             {
                 Console.WriteLine(message);
                 BlankSpace();
-                
+
             }
             BlankSpace();
-            
-        }
-        
 
-        protected virtual void CreateMenuOptions(){ }//TODO: måske lav abstract i stedet.
+        }
+
+
+        protected virtual void CreateMenuOptions() { }//TODO: måske lav abstract i stedet.
 
 
 
         public virtual void RunMenu()
         {
 
-            
+            pizzaController = new PizzaController();
             ClearList();
             CreateMenuOptions();
             BlankSpace();
@@ -47,7 +48,7 @@ namespace Pizzaria {
             DisplayOptions();
             _numberentered = Console.ReadLine();
 
-            
+
         }
         protected virtual void YouPressedMessage()
         {
@@ -57,7 +58,7 @@ namespace Pizzaria {
         }
 
 
-        public void BlankSpace() 
+        public void BlankSpace()
         {
             Console.WriteLine("");
         }

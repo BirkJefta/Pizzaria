@@ -57,16 +57,21 @@ namespace Pizzaria {
         {
 
             RemoveFromMenu(pizzaID);
-            Dictionary<int, Pizza> tempPizza = new Dictionary<int, Pizza>(_pizzaMenu);
+            List<Pizza> tempPizzaList = new List<Pizza>();
+
+            foreach (var pizza in _pizzaMenu.Values)
+            {
+                tempPizzaList.Add(pizza);
+            }
 
 
             _pizzaMenu.Clear();
 
             int newKey = 1;
 
-            foreach (var pizza in tempPizza)
+            foreach (var pizza in tempPizzaList)
             {
-                _pizzaMenu.Add(newKey++, pizza.Value);
+                _pizzaMenu.Add(newKey++, pizza);
             }
 
 

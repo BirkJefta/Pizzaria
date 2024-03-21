@@ -8,12 +8,7 @@ using System.Threading.Tasks;
 namespace Pizzaria {
     public class EmployeeUI : UIMenu {
         private bool _proceed = true;
-        private PizzaController _pizzaController;
-
-        public EmployeeUI()
-        {
-            _pizzaController = new PizzaController();
-        }
+        
 
         protected override void CreateMenuOptions()
         {
@@ -54,12 +49,12 @@ namespace Pizzaria {
                     int pizzaID = int.Parse(Console.ReadLine());
 
 
-                    _pizzaController.CreatePizza(pizzaName, pizzaToppings, pizzaPrice);
-                    Console.WriteLine(_pizzaController.AddPizza(pizzaID, _pizzaController.CreatePizza(pizzaName, pizzaToppings, pizzaPrice)));
+                    pizzaController.CreatePizza(pizzaName, pizzaToppings, pizzaPrice);
+                    Console.WriteLine(pizzaController.AddPizza(pizzaID, pizzaController.CreatePizza(pizzaName, pizzaToppings, pizzaPrice)));
                     BlankSpace();
                     Console.WriteLine("The Menu is now:");
                     BlankSpace();
-                    _pizzaController.DisplayMenu();
+                    pizzaController.DisplayMenu();
                     Console.WriteLine();
                     Console.WriteLine("Press any key to proceed");
                     Console.ReadLine();
@@ -68,23 +63,19 @@ namespace Pizzaria {
 
                 case "2":
                     Console.Clear();
-                    //_pizzaController.DisplayMenu(); (virker ikke af en eller anden årsag)
+                    pizzaController.DisplayMenu();
                     Console.WriteLine("Enter the number of the pizza you want to remove ");
                     int removedPizzaID = int.Parse(Console.ReadLine());
                     Console.Clear();
                     Console.WriteLine($"You pressed {removedPizzaID}");
-                    Console.WriteLine($"You are trying to remove {_pizzaController.FindPizza(removedPizzaID)}");
+                    Console.WriteLine($"You are trying to remove {pizzaController.FindPizza(removedPizzaID)}");
                     Console.WriteLine("Are you sure?");
                     string removeinput = Console.ReadLine();
                     string remove = removeinput.ToLower();
                     
                     if (remove == "y" || remove == "yes")
                     {
-                        
-                        _pizzaController.RemoveAndUpdateMenu(removedPizzaID);
-                        Console.WriteLine("The updated menu is:");
-                        
-
+                        pizzaController.RemoveAndUpdateMenu(removedPizzaID);
                     }
                     Console.WriteLine("press any key to proceed");
                     Console.ReadKey();
