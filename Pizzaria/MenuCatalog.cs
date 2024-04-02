@@ -13,34 +13,38 @@ namespace Pizzaria {
         {
             pizzas = new List<Pizza>();
         }
-        public void InitialPizzaMenu() {
-            Pizza pizza1 = new Pizza();
-            pizza1.Name = "Margherita";
-            pizza1.Price = ;
+        public static void InitialPizzaMenu() {
+            CreatePizza("Margherita", "Tomato & Cheese", 80);
+            CreatePizza("Vesuvio", "Tomato, Cheese & Ham", 92);
+            CreatePizza("Capricciosa", "Tomato, Cheese, Ham & Mushroom ", 98);
+            
+            
         }
-        public static void CreatePizza(string Name, string toppings, int price)
+        public static void CreatePizza(string Name, string toppings, double price)
         {
             Pizza pizza = new Pizza();
             pizza.Name = Name;
             pizza.Toppings = toppings;
             pizza.Price = price;
             pizzas.Add(pizza);
-            Console.WriteLine($"{pizza} \n" +
-                $"Was succesfully added");
+            
         }
 
         public static void DisplayPizza()
         {
             Console.WriteLine("Big Mamas Pizza Menu");
+            int i = 1;
             foreach (Pizza pizza in pizzas)
             {
-                int i = 1;
+                
                 
                 Console.WriteLine($"{i}, {pizza}");
+                Console.WriteLine("");
                 i++;
             }
         }
-        public static Pizza Read(int number) {
+        public static Pizza SearchPizzaByNumber(int number) {
+            
             int pizzanumber = number-1;
             int pizzaByIndex;
             try
@@ -51,7 +55,7 @@ namespace Pizzaria {
             } 
             catch
             {
-                Console.WriteLine("No pizza was found, please try another number");
+                Console.WriteLine("No pizza was found, please try a different number");
                 return null;
             }
         }

@@ -15,5 +15,20 @@ namespace Pizzaria {
         {
             MenuCatalog.DisplayPizza();
         }
+        public void CreatePizza(string Name, string toppings, double price)
+        {
+            MenuCatalog.CreatePizza(Name, toppings, price);
+            Console.WriteLine($"Pizza " +
+                $"was succesfully added");
+        }
+        public Pizza SearchPizzaByNumber (int number)
+        {
+            return MenuCatalog.SearchPizzaByNumber(number);
+            
+        }
+        public Pizza SearchByName (string name)
+        {
+            return MenuCatalog.SearchPizza(name);
+        }
     }
 }
