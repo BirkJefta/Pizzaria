@@ -85,16 +85,9 @@ namespace Pizzaria {
         }
         public static void DeletePizza(int number)
         {
-            bool invalidInput = true;
-            while (invalidInput)
-            {
-                
-                    int deletedpizza = number - 1;
-                    pizzas.Remove(pizzas[deletedpizza]);
-                    invalidInput = false;
-                
-                
-            }
+            int deletedpizza = number - 1;
+            pizzas.Remove(pizzas[deletedpizza]);
+            
         }
     }
 }

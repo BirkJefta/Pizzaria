@@ -86,6 +86,7 @@ namespace Pizzaria {
             pizzaManager.DeletePizza(SearchPizzaByNumber());
             Console.WriteLine("Pizza was succesfully deleted");
         }
+
     }
     
 }
