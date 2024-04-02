@@ -24,8 +24,7 @@ namespace Pizzaria {
         public override string ToString()
         {
             
-            return ( $" {Name} costs {Price},- kr \n" +
-                $" \n" +
+            return ( $" {Name} {Price},- kr \n" +
                 $"ingredients: {Toppings}");
         }
     }

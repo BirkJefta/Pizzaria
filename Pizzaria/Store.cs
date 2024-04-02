@@ -6,15 +6,19 @@ using System.Threading.Tasks;
 
 namespace Pizzaria {
     public class Store {
-        UIMenu CustomerOrEmployee = new CustomerOrEmployee();
-        
-        public void Run()
-        {
-            InitialPizzaMenu initialMenu = new InitialPizzaMenu();
-            initialMenu.RunInitialMenu();
-            CustomerOrEmployee.RunMenu();
 
+        public void Test() { 
+            Dialog dialog = new Dialog();
+            dialog.Run();
+            
+            //MenuCatalog catalog = new MenuCatalog();
+            //catalog.CreatePizza("Calzone", "cheese", 55);
+            //catalog.DisplayPizza();
+            //catalog.Read(1);
+            //catalog.SearchPizza("calzone");
         }
+    }
+
+
 
     }
-}
