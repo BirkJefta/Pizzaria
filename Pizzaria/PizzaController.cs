@@ -24,14 +24,14 @@ namespace Pizzaria {
         public void CreatePizza()
         {
             double price = 0;
-            Console.WriteLine("What is the name of the pizza?");
+            Console.WriteLine("Please enter the name of the pizza");
             string name = Console.ReadLine();
             bool IsValid = false;
             while (IsValid != true)
             {
                 try
                 {
-                    Console.WriteLine("What is the price of the pizza?");
+                    Console.WriteLine("Please enter the price of the pizza");
                     string stringPrice = Console.ReadLine();
 
 
@@ -43,7 +43,7 @@ namespace Pizzaria {
                     Console.WriteLine("wrong format, please enter a number");
                 }
             }
-            Console.WriteLine("What is the toppings");
+            Console.WriteLine("Please enter the name of the toppings");
             string toppings = Console.ReadLine();
 
             pizzaManager.CreatePizza(name,toppings,price);

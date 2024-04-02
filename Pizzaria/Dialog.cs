@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -74,6 +75,9 @@ namespace Pizzaria {
                         {
                             proceed = false;
                         }
+                        break;
+                    default:
+                        Console.WriteLine("Wrong input, try again");
                         break;
 
                 }
