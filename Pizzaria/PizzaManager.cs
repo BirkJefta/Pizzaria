@@ -30,5 +30,9 @@ namespace Pizzaria {
         {
             return MenuCatalog.SearchPizza(name);
         }
+        public void DeletePizza(int number)
+        {
+            MenuCatalog.DeletePizza(number);
+        }
     }
 }

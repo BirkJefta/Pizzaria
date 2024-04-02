@@ -49,20 +49,22 @@ namespace Pizzaria {
             pizzaManager.CreatePizza(name,toppings,price);
             
         }
-        public void SearchPizzaByNumber() 
+        public int SearchPizzaByNumber() 
         {
+            int enteredNumber = 0;
             bool isValid = true;
             while(isValid){
                 
-                    Console.WriteLine("What is the number of the pizza you want to find?");
+                    Console.WriteLine("What is the number of the pizza?");
                     string stringEnteredNumber = Console.ReadLine();
                 try
                 {
-                    int enteredNumber = Int32.Parse(stringEnteredNumber);
+                     enteredNumber = Int32.Parse(stringEnteredNumber);
                     if (pizzaManager.SearchPizzaByNumber(enteredNumber) != null)
                     {
                         isValid = false;
                     }
+                    
                 }
                 catch
                 {
@@ -70,15 +72,20 @@ namespace Pizzaria {
                 }
                 
             } 
+            return enteredNumber;
 
         }
         public void SearchByName()
         {
-            Console.WriteLine("What is the name of the pizza you want to find?");
+            Console.WriteLine("What is the name of the pizza?");
             string name = Console.ReadLine();
             pizzaManager.SearchByName(name);
         }
-
-
+        public void DeletePizza()
+        {
+            pizzaManager.DeletePizza(SearchPizzaByNumber());
+            Console.WriteLine("Pizza was succesfully deleted");
+        }
     }
+    
 }

@@ -23,7 +23,8 @@ namespace Pizzaria {
                 "2: Add pizza to menu",
                 "3: Search pizza by number",
                 "4: Search pizza by name",
-                "5: Quit program"
+                "5: Delete a pizza",
+                "6: Quit program"
             };
             
             while (proceed)
@@ -44,7 +45,7 @@ namespace Pizzaria {
                     case "1":
 
                         controller.DisplayMenu();
-                        
+                        Thread.Sleep(2500);
                         break;
 
                     case "2":
@@ -67,6 +68,13 @@ namespace Pizzaria {
 
                         break;
                     case "5":
+                        Console.WriteLine("YOU PRESSED 5 TO REMOVE A PIZZA");
+                        Console.WriteLine("\n");
+                        controller.DisplayMenu();
+                        controller.DeletePizza();
+                        
+                        break;
+                    case "6":
                         Console.WriteLine("You pressed 5 to Quit the program, are you sure? ");
                         Console.WriteLine("Press y for yes , otherwise press n for no");
                         ConsoleKeyInfo quit = Console.ReadKey();
@@ -75,6 +83,8 @@ namespace Pizzaria {
                         {
                             proceed = false;
                         }
+                        Console.Beep();
+                        
                         break;
                     default:
                         Console.WriteLine("Wrong input, try again");
