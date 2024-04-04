@@ -46,7 +46,7 @@ namespace Pizzaria {
                     case "1":
                         Console.WriteLine($"YOU PRESSED {numberEntered}, TO SEE MENU");
                         controller.DisplayMenu();
-                        Thread.Sleep(2500);
+                        Thread.Sleep(3500);
                         break;
 
                     case "2":
@@ -54,21 +54,21 @@ namespace Pizzaria {
                         controller.CreatePizza();
                         Console.WriteLine("\n");
                         controller.DisplayMenu();
-                        Thread.Sleep(2500);
+                        Thread.Sleep(3500);
                         
                         break;
                     case "3":
                         Console.WriteLine($"YOU PRESSED {numberEntered}, TO SEARCH BY NUMBER");
                         controller.DisplayMenu();
                         controller.SearchPizzaByNumber();
-                        Thread.Sleep(1500);
+                        Thread.Sleep(3500);
                         break;
                     case "4":
                         Console.WriteLine($"YOU PRESSED {numberEntered}, TO SEARCH BY NAME");
                         controller.DisplayMenu();
                         Console.WriteLine("\n");
                         controller.SearchByName();
-                        Thread.Sleep(2500);
+                        Thread.Sleep(3500);
 
                         break;
                     case "5":
