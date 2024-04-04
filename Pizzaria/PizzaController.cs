@@ -26,6 +26,7 @@ namespace Pizzaria {
             double price = 0;
             Console.WriteLine("Please enter the name of the pizza");
             string name = Console.ReadLine();
+            string formattedName = char.ToUpper(name[0]) + name.Substring(1).ToLower();
             bool IsValid = false;
             while (IsValid != true)
             {
@@ -46,7 +47,7 @@ namespace Pizzaria {
             Console.WriteLine("Please enter the name of the toppings");
             string toppings = Console.ReadLine();
 
-            pizzaManager.CreatePizza(name,toppings,price);
+            pizzaManager.CreatePizza(formattedName,toppings,price);
             
         }
         public int SearchPizzaByNumber() 
@@ -86,6 +87,7 @@ namespace Pizzaria {
             pizzaManager.DeletePizza(SearchPizzaByNumber());
             Console.WriteLine("Pizza was succesfully deleted");
         }
+
 
     }
     

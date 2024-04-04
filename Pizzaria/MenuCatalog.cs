@@ -17,8 +17,6 @@ namespace Pizzaria {
             CreatePizza("Margherita", "Tomato & Cheese", 80);
             CreatePizza("Vesuvio", "Tomato, Cheese & Ham", 92);
             CreatePizza("Capricciosa", "Tomato, Cheese, Ham & Mushroom ", 98);
-            
-            
         }
         public static void CreatePizza(string Name, string toppings, double price)
         {

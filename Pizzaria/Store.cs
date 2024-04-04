@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 namespace Pizzaria {
     public class Store {
 
-        public void Test() { 
+        public void Test()
+        {
             Dialog dialog = new Dialog();
             dialog.Run();
         }
     }
 
+}
 
-
-    }
+    

@@ -24,7 +24,6 @@ namespace Pizzaria {
         public Pizza SearchPizzaByNumber (int number)
         {
             return MenuCatalog.SearchPizzaByNumber(number);
-            
         }
         public Pizza SearchByName (string name)
         {

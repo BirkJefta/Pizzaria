@@ -8,10 +8,9 @@ using System.Threading.Tasks;
 namespace Pizzaria {
     public class Dialog {
         PizzaController controller;
-        OrderController orderController;
+        
         public Dialog() {
             controller = new PizzaController();
-            orderController = new OrderController();
             MenuCatalog.InitialPizzaMenu();
         }
         public void Run()
@@ -22,13 +21,11 @@ namespace Pizzaria {
             List<string> menuList = new List<string>()
             {
                 "1: Display pizza-menu",
-                "2: Create new order",
-                "3: Add pizza to menu",
-                "4: Search pizza by number",
-                "5: Search pizza by name",
-                "6: Delete a pizza",
-                "7: ",
-                "7: Quit program"
+                "2: Add pizza to menu",
+                "3: Search pizza by number",
+                "4: Search pizza by name",
+                "5: Delete a pizza",
+                "6: Quit program"
             };
             
             while (proceed)
@@ -51,26 +48,22 @@ namespace Pizzaria {
                         controller.DisplayMenu();
                         Thread.Sleep(2500);
                         break;
-                    case "2":
-                        Console.WriteLine($"YOU PRESSED {numberEntered}, TO CREATE A NEW ORDER");
-                        orderController.CreateNewOrder();
-                        break;
 
-                    case "3":
-                        Console.WriteLine($"YOU PRESSED {numberEntered}, TO SEE ADD TO MENU");
+                    case "2":
+                        Console.WriteLine($"YOU PRESSED {numberEntered}, TO ADD A PIZZA TO MENU");
                         controller.CreatePizza();
                         Console.WriteLine("\n");
                         controller.DisplayMenu();
                         Thread.Sleep(2500);
                         
                         break;
-                    case "4":
+                    case "3":
                         Console.WriteLine($"YOU PRESSED {numberEntered}, TO SEARCH BY NUMBER");
                         controller.DisplayMenu();
                         controller.SearchPizzaByNumber();
                         Thread.Sleep(1500);
                         break;
-                    case "5":
+                    case "4":
                         Console.WriteLine($"YOU PRESSED {numberEntered}, TO SEARCH BY NAME");
                         controller.DisplayMenu();
                         Console.WriteLine("\n");
@@ -78,14 +71,14 @@ namespace Pizzaria {
                         Thread.Sleep(2500);
 
                         break;
-                    case "6":
+                    case "5":
                         Console.WriteLine($"YOU PRESSED {numberEntered} TO REMOVE A PIZZA");
                         Console.WriteLine("\n");
                         controller.DisplayMenu();
                         controller.DeletePizza();
                         
                         break;
-                    case "7":
+                    case "6":
                         Console.WriteLine($"YOU PRESSED {numberEntered}, TO QUIT");
                         Console.WriteLine("Are you sure");
                         Console.WriteLine("Press y for yes , otherwise press n for no");
