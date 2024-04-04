@@ -18,12 +18,10 @@ namespace Pizzaria {
             CreatePizza("Vesuvio", "Tomato, Cheese & Ham", 92);
             CreatePizza("Capricciosa", "Tomato, Cheese, Ham & Mushroom ", 98);
         }
-        public static void CreatePizza(string Name, string toppings, double price)
+        public static void CreatePizza(string name, string toppings, double price)
         {
-            Pizza pizza = new Pizza();
-            pizza.Name = Name;
-            pizza.Toppings = toppings;
-            pizza.Price = price;
+            Pizza pizza = new Pizza(name,toppings,price);
+            
             pizzas.Add(pizza);
             
         }

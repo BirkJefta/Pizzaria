@@ -13,11 +13,11 @@ namespace Pizzaria {
 
         
 
-        public Pizza() 
+        public Pizza(string name, string toppings, double price) 
         {
-            Name = "";
-            Toppings = "";
-            Price = 0;
+            Name = name;
+            Toppings = toppings;
+            Price = price;
             
         }
 

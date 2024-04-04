@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Pizzaria {
     public class Dialog {
-        PizzaController controller;
+        PizzaController _controller;
         
         public Dialog() {
-            controller = new PizzaController();
+            _controller = new PizzaController();
             MenuCatalog.InitialPizzaMenu();
         }
         public void Run()
@@ -45,37 +45,37 @@ namespace Pizzaria {
                 {
                     case "1":
                         Console.WriteLine($"YOU PRESSED {numberEntered}, TO SEE MENU");
-                        controller.DisplayMenu();
+                        _controller.DisplayMenu();
                         Thread.Sleep(3500);
                         break;
 
                     case "2":
                         Console.WriteLine($"YOU PRESSED {numberEntered}, TO ADD A PIZZA TO MENU");
-                        controller.CreatePizza();
+                        _controller.CreatePizza();
                         Console.WriteLine("\n");
-                        controller.DisplayMenu();
+                        _controller.DisplayMenu();
                         Thread.Sleep(3500);
                         
                         break;
                     case "3":
                         Console.WriteLine($"YOU PRESSED {numberEntered}, TO SEARCH BY NUMBER");
-                        controller.DisplayMenu();
-                        controller.SearchPizzaByNumber();
+                        _controller.DisplayMenu();
+                        _controller.SearchPizzaByNumber();
                         Thread.Sleep(3500);
                         break;
                     case "4":
                         Console.WriteLine($"YOU PRESSED {numberEntered}, TO SEARCH BY NAME");
-                        controller.DisplayMenu();
+                        _controller.DisplayMenu();
                         Console.WriteLine("\n");
-                        controller.SearchByName();
+                        _controller.SearchByName();
                         Thread.Sleep(3500);
 
                         break;
                     case "5":
                         Console.WriteLine($"YOU PRESSED {numberEntered} TO REMOVE A PIZZA");
                         Console.WriteLine("\n");
-                        controller.DisplayMenu();
-                        controller.DeletePizza();
+                        _controller.DisplayMenu();
+                        _controller.DeletePizza();
                         
                         break;
                     case "6":
