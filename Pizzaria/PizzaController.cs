@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace Pizzaria {
     public class PizzaController {
-        PizzaManager pizzaManager;
+        private PizzaManager _pizzaManager;
 
         public PizzaController() 
         {
-            pizzaManager = new PizzaManager();
+            _pizzaManager = new PizzaManager();
         }
 
         public void DisplayMenu()
         {
             Console.WriteLine("MENU");
             Console.WriteLine("\n");
-            pizzaManager.DisplayMenu();
+            _pizzaManager.DisplayMenu();
             Console.WriteLine("\n");
         }
         public void CreatePizza()
@@ -47,7 +47,7 @@ namespace Pizzaria {
             Console.WriteLine("Please enter the name of the toppings");
             string toppings = Console.ReadLine();
 
-            pizzaManager.CreatePizza(formattedName,toppings,price);
+            _pizzaManager.CreatePizza(formattedName,toppings,price);
             
         }
         public int SearchPizzaByNumber() 
@@ -61,7 +61,7 @@ namespace Pizzaria {
                 try
                 {
                      enteredNumber = Int32.Parse(stringEnteredNumber);
-                    if (pizzaManager.SearchPizzaByNumber(enteredNumber) != null)
+                    if (_pizzaManager.SearchPizzaByNumber(enteredNumber) != null)
                     {
                         isValid = false;
                     }
@@ -80,11 +80,11 @@ namespace Pizzaria {
         {
             Console.WriteLine("What is the name of the pizza?");
             string name = Console.ReadLine();
-            pizzaManager.SearchByName(name);
+            _pizzaManager.SearchByName(name);
         }
         public void DeletePizza()
         {
-            pizzaManager.DeletePizza(SearchPizzaByNumber());
+            _pizzaManager.DeletePizza(SearchPizzaByNumber());
             Console.WriteLine("Pizza was succesfully deleted");
         }
 

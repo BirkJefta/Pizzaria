@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Pizzaria {
     public class Dialog {
-        PizzaController _controller;
+        private PizzaController _controller;
         
         public Dialog() {
             _controller = new PizzaController();
